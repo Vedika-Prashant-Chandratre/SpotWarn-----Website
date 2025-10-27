@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard | Dashboard :: SpotWarn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Colored Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- bootstrap-css -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <!-- font CSS -->
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="css/font.css" type="text/css"/>
+    <link href="css/font-awesome.css" rel="stylesheet"> 
+    <!-- //font-awesome icons -->
+    <script src="js/jquery2.0.3.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script>
+        $(function () {
+            $('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+            if (!screenfull.enabled) {
+                return false;
+            }
+            $('#toggle').click(function () {
+                screenfull.toggle($('#container')[0]);
+            }); 
+        });
+    </script>
+    <!-- charts -->
+    <script src="js/raphael-min.js"></script>
+    <script src="js/morris.js"></script>
+    <link rel="stylesheet" href="css/morris.css">
+    <!-- //charts -->
+    <!--skycons-icons-->
+    <script src="js/skycons.js"></script>
+    <!--//skycons-icons-->
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        body {
+            background-image: url("images/back1.avif"); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Fixes the background image so it doesn't scroll with content */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .comments-icon i {
+            font-size: 80px; /* Increase the font size to make the icon larger */
+        }
+
+        .top-comment-grid {
+            flex: 1; 
+            min-width: 200px; 
+            padding: 10px; 
+        }
+
+        .comments {
+            padding: 10px; 
+            
+            text-align: center; 
+            height: 150px; 
+        }
+
+        .comments h3 {
+            font-size: 20px; 
+            color: black; 
+            margin-bottom: 10px;
+        }
+
+        .comments a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff; /* Color for the link */
+            text-decoration: none; /* Remove underline from link */
+            background-color: #ffffff; /* Background color for link */
+            padding: 5px 10px; /* Padding for the link */
+            border-radius: 4px; /* Rounded corners for the link */
+        }
+
+        .comments a:hover {
+            background-color: #007bff; /* Background color on hover */
+            color: #ffffff; /* Text color on hover */
+        }
+
+        .comments.likes, .comments.views, .comments.likes-info {
+            height: 150px; /* Set height for uniform size */
+        }
+    </style>
+</head>
+<body class="dashboard-page">
+    <div id="splash-screen" style="position: fixed; width: 100%; height: 100%; background-color: #007bff; z-index: 1000; display: flex; justify-content: center; align-items: center;">
+        <h1 style="color: white; font-size: 50px; font-family: 'Great Vibes', cursive; animation: bounce 2s infinite;">Spot Warn</h1>
+    </div>
+    <script>
+        var theme = $.cookie('protonTheme') || 'default';
+        $('body').removeClass (function (index, css) {
+            return (css.match (/\btheme-\S+/g) || []).join(' ');
+        });
+        if (theme !== 'default') $('body').addClass(theme);
+    </script>
+    <nav class="main-menu">
+        <ul class="logout">
+            <li>
+                <a href="Welcome.html">
+                    <i class="icon-off nav-icon"></i>
+                    <span class="nav-text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <section class="wrapper scrollable">
+        <nav class="user-menu">
+            <a href="javascript:;" class="main-menu-access">
+                <i class="icon-proton-logo"></i>
+                <i class="icon-reorder"></i>
+            </a>
+        </nav>
+        <section class="title-bar">
+            <div class="logo">
+                <h1><a href="Welcome.html"><img src="assets/img/Saf1.png" alt="" height="33%" width="33%"/></a></h1>
+            </div>
+            <div style="
+                position: absolute; 
+                top: 30px; 
+                width: 100%; 
+                text-align: center; 
+                font-family: 'Great Vibes', cursive; 
+                font-size: 70px; 
+                color: #007bff;">
+                <h1 style="margin: 0;">Spot Warn</h1>
+            </div>
+            <div class="header-right">
+                <div class="profile_details_left">
+                    <div class="header-right-left">
+                        <!--notifications of menu start -->
+                    </div>
+                    <div class="profile_details">       
+                        <ul>
+                            <li class="dropdown profile_details_drop">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile_img">    
+                                        <span class="prfil-img"><i class="fa fa-user" aria-hidden="true"></i></span> 
+                                        <div class="clearfix"></div>    
+                                    </div>    
+                                </a>
+                                <ul class="dropdown-menu drp-mnu">
+                                    <li><a href="Welcome.html"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+        <br>
+        <br>
+        <h1 align="center">Welcome To Dashboard</h1>
+        <div class="main-grid">
+            <div class="social grid">
+                <div class="grid-info" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                    <div class="col-md-3 top-comment-grid">
+                        <div class="comments likes" style="padding: 10px;">
+                            <div class="comments-icon">
+                                <i class="fa fa-user" style="color: white;"></i>
+                            </div>
+                            <div class="comments-info likes-info">
+                                <br>
+                                <h3>User</h3>
+                                <a href="u_login.html">Click</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 top-comment-grid">
+                        <div class="comments" style="padding: 10px;">
+                            <div class="comments-icon">
+                                <i class="fa fa-comments" style="color: white;"></i>
+                            </div>
+                            <div class="comments-info">
+                                <br>
+                                <h3>Admin</h3>
+                                <a href="a_login.html">Click</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 top-comment-grid">
+                        <div class="comments views" style="padding: 10px;">
+                            <div class="comments-icon">
+                                <i class="fa fa-eye" style="color: white;"></i>
+                            </div>
+                            <div class="comments-info views-info">
+                                <br>
+                                <h3>Police</h3>
+                                <a href="s_login.html">Click</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 top-comment-grid">
+                        <div class="comments likes" style="padding: 10px;">
+                            <div class="comments-icon">
+                                <i class="fa fa-question" style="color: white;"></i>
+                            </div>
+                            <div class="comments-info likes-info">
+                                <br>
+                                <h3>FAQ'S</h3>
+                                <a href="faq_dashboard.html">Click</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 top-comment-grid">
+                        <div class="comments" style="padding: 10px;">
+                            <div class="comments-icon">
+                                <i class="fa fa-comments" style="color: white;"></i>
+                            </div>
+                            <div class="comments-info">
+                                <br>
+                                <h3>Location</h3>
+                                <a href="404.html">Click</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- footer -->
+        <div class="footer">
+            <p>© 2024 Spot Warn. All Rights Reserved. Design by Vedika Chandratre & Anjali Pawar</p>
+        </div>
+        <!-- //footer -->
+    </section>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/proton.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.getElementById('splash-screen').style.transition = "opacity 1s";
+                document.getElementById('splash-screen').style.opacity = 0;
+                setTimeout(function() {
+                    document.getElementById('splash-screen').style.display = 'none';
+                }, 1000);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
